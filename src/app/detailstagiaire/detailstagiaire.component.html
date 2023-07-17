@@ -1,0 +1,35 @@
+<h2>Stagiaire détails</h2> 
+
+<hr/>
+<div class="container" id="main-container">
+
+<div *ngIf="currentStagiaire">
+  <div>
+    <label><b>fullname : </b></label> {{currentStagiaire.fullname}}
+  </div>
+  <div>
+    <label><b>telephone: </b></label> {{currentStagiaire.telephone}}
+  </div>
+  <div>
+    <label><b>email: </b></label> {{currentStagiaire.email}}
+  </div>
+  <div>
+    <div>
+ <label><b>datenaissance: </b></label> {{currentStagiaire.datenaissance| date:"yyyy/MM/dd"}}
+      </div> 
+      <div>
+    <label><b>adresse: </b></label> {{currentStagiaire.adresse}}
+  </div>  
+  <div>
+    <label><b>nom d'université: </b></label> {{currentStagiaire.nomUniv}}
+  </div>  
+  <div>
+    <label><b>numero du carte cin: </b></label> {{currentStagiaire.numCIN}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Stagiaire List</button><br>
+</div>
+

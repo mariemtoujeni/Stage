@@ -1,0 +1,142 @@
+<h1 class="form-title text-center">Modifier Stage</h1>
+
+<div class="row">
+   
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+    
+        <div class="card border-info mb-3" style="max-width: 100%;">
+            <div class="row g-0">
+              <div class="col-md-4">
+
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <div class="submit-form">
+                        <div *ngIf="!submitted">
+                            <div class="row" >
+                              
+                            <div  class="form-group col-md-6">
+                                <label for="title">titreStage</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="titreStage"
+                                    required
+                                    [(ngModel)]="stage.titreStage"
+                                    name="titreStage"
+                                    value="{{stage.titreStage}}"
+                                  
+                                />
+                    
+                            </div>
+                            <div class="form-group col-md-6">
+                            <label for="title">typeStage</label>
+                            <input
+                                class="form-control"
+                                id="typeStage"
+                                required
+                                [(ngModel)]="stage.typeStage"
+                                name="typeStage"
+                                type="string"
+                                value="{{stage.typeStage}}"
+                            />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">dateDebutStage</label>
+                                <input
+                                class="form-control"
+                                id="dateDebutStage"
+                                required
+                                [(ngModel)]="stage.dateDebutStage"
+                                name="dateDebutStage"
+                                type="date"
+                                #dateDebutStage value="{{stage.dateDebutStage}} | date:'yyyy-MM-dd'" 
+                                />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">dateFinStage</label>
+                                <input class="form-control" type="date"
+                                required
+                                [(ngModel)]="stage.dateFinStage"
+                                id="dateFinStage"
+                                name="dateFinStage"
+                                #dateFinStage value="{{stage.dateFinStage}} | date:'yyyy-MM-dd'" 
+                                 />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">attestation</label>
+                                <input
+                               
+                                id="attestation"
+                                required
+                                [(ngModel)]="stage.attestation"
+                                name="attestation"
+                            type="checkbox"
+                            
+                                />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">pdf</label>
+                                <input
+                                
+                                id="pdf"
+                                required
+                                [(ngModel)]="stage.pdf"
+                                name="pdf"
+                            type="checkbox"
+                            
+                                />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">nomService</label>
+                                <input
+                                class="form-control"
+                                id="nomService"
+                                required
+                                [(ngModel)]="stage.nomService"
+                                name="nomService"
+                            type="text"
+                            value="{{stage.nomService}}"
+                                />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">description</label>
+                                <input
+                                class="form-control"
+                                id="stage.description"
+                                required
+                                [(ngModel)]="stage.description"
+                                name="description"
+                            type="text"
+                            value="{{stage.description}}"
+                                />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">encadreur</label>
+                                <select type="text"  class="form-control" [(ngModel)]="stage.encadreur.id" id="encadreurfullname" name="encadreurfullname" >
+                                   <option value="{{stage.encadreur.id}}" disabled > {{voirStage.encadreurfullname}} </option>
+                                    <option *ngFor="let encadr of encadreure" [value]="encadr.id">{{encadr.fullname}}</option>
+                                  </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="title">stagiaires</label>
+                                <p-multiSelect [options]="labelValu" [(ngModel)]="stage.stagiaireIds" defaultLabel="{{voirStage.stagiairefullnames}}"></p-multiSelect>
+                            </div>
+                        </div>
+                        <button (click)="Modifstage()" class="btn btn-success">Submit</button>
+                        </div>
+                        <div *ngIf="submitted">
+                            <h4>Stage was Modified successfully!</h4>
+                            <button class="btn btn-success" (click)="navigate()">Add</button>
+                        </div>
+                        </div>
+                </div>
+              </div>
+            </div>
+          </div>           
+    </div>
+    <div class="col-md-2">
+    </div>
+    </div>

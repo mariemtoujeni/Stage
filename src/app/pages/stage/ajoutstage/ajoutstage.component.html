@@ -1,0 +1,156 @@
+<h1 class="form-title text-center">Ajouter Stage</h1>
+<div class="row">
+   
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+    
+    
+    
+        <div class="card border-info mb-3" style="max-width: 100%;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{path}}" height="100%" width="100%">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">titreStage</label>
+          <input
+           
+            class="form-control"
+            id="titreStage"
+            required
+            [(ngModel)]="stage.titreStage"
+            name="titreStage"
+            type="string"
+          />
+  
+        </div>
+        <div class="form-group">
+          <label for="typeStage">typeStage</label>
+          <input
+            class="form-control"
+            id="typeStage"
+            required
+            [(ngModel)]="stage.typeStage"
+            name="typeStage"
+            type="string"
+          />
+        </div>
+        <div class="form-group">
+            <label for="dateDebutStage">dateDebutStage</label>
+            <input
+              class="form-control"
+              id="dateDebutStage"
+              required
+              [(ngModel)]="stage.dateDebutStage"
+              name="dateDebutStage"
+              type="date"
+            />
+          </div>
+          <div class="form-group">
+            <label for="dateFinStage">dateFinStage</label>
+            <input
+              class="form-control"
+              id="dateFinStage"
+              required
+              [(ngModel)]="stage.dateFinStage"
+              name="dateFinStage"
+              type="date"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="attestation">attestation</label>
+            <input
+              
+              id="attestation"
+              required
+              [(ngModel)]="stage.attestation"
+              name="attestation"
+              type="checkbox"
+            />
+          </div>
+          <div class="form-group">
+            <label for="pdf">pdf</label>
+            <input
+              
+              id="pdf"
+              required
+              [(ngModel)]="stage.pdf"
+              name="pdf"
+              type="checkbox"
+            />
+          </div>
+          <div class="form-group">
+            <label for="nomService">nomService</label>
+            <input
+              class="form-control"
+              id="nomService"
+              required
+              [(ngModel)]="stage.nomService"
+              name="nomService"
+              type="string"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">description</label>
+            <input
+              class="form-control"
+              id="description"
+              required
+              [(ngModel)]="stage.description"
+              name="description"
+              type="string"
+            />
+          </div>
+      
+          <div class="form-group">
+            <label for="encadreur">encadreur</label>
+            <select type="text" [(ngModel)]="stage.encadreur.id" class="form-control" id="encadreur" >
+              <option value=-1 disabled checked>selectionner</option>
+              <option *ngFor="let encadr of encadreure" [value]="encadr.id">{{encadr.fullname}}</option>
+            </select>
+         
+            <div class="form-group">
+              <label for="stagiaire">stagiaires</label>
+             
+              <p-multiSelect [options]="labelValu" [(ngModel)]="stage.stagiaireIds" defaultLabel="stagiaires"></p-multiSelect>
+        
+            </div>
+          </div>
+        
+
+        <button (click)="ajoutstage()" class="btn btn-success">Submit</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Encadreur was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="navigate()">Add</button>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="col-md-2">
+</div>
+</div>
+  
+  
